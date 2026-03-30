@@ -120,3 +120,18 @@ input:invalid:not(:placeholder-shown) { border: 2px solid red; }
     display: inline-block;
     padding: 5px;
 }
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border: 2px solid #6b309e;
+    border-radius: 8px;
+    z-index: 1000;
+    text-align: center;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #6b309e;
+}
