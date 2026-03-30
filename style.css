@@ -51,11 +51,24 @@ body {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 10px;
-    border: 1px solid transparent;
+    padding: 10px 22px;
+    background-color: #6b309e;
+    border: 2px solid #3d1b5a;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.link:hover { border-bottom: 1px solid white; }
+.link:hover {
+    background-color: #a366ff;
+    color: #000; 
+    border-color: #fff;
+    transform: scale(1.1); 
+    box-shadow: 0 0 15px #a366ff;
+    cursor: pointer;
+}
 
 .content-wrapper {
     max-width: 800px;
