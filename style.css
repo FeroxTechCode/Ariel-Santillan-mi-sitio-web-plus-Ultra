@@ -107,3 +107,28 @@ input:invalid:not(:placeholder-shown) { border: 2px solid red; }
     display: inline-block;
     padding: 5px;
 }
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.85); 
+    padding: 12px;
+    border: 2px solid #6b309e; 
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(107, 48, 158, 0.5); 
+}
+.music-player p {
+    margin: 0 0 8px 0;
+    font-family: 'Courier New', Courier, monospace; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+audio::-webkit-media-controls-panel {
+    background-color: #6b309e;
+}
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #ffffff;
+}
