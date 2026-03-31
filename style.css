@@ -136,6 +136,7 @@ input:invalid:not(:placeholder-shown) {
     display: inline-block;
     padding: 5px;
 }
+/* Quisas no sea de Fnaf pero aguante issac */
 .music-player {
     position: fixed;
     bottom: 20px;
