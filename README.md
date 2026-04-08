@@ -1,29 +1,20 @@
-# Trabajo Práctico N°2: Mi Sitio Web Profesional Plus Ultra🚀
-**Autor:** Ariel Santillán  
-**Materia:** Prácticas Profesionalizantes II - Salta, Argentina
+# Ariel Santillán | FeroxTechCode - Portfolio Profesional
 
-## 📌 Descripción del Proyecto
-Este repositorio contiene el desarrollo de mi sitio web personal, enfocado en demostrar habilidades de maquetado semántico, estilización avanzada con CSS y gestión de proyectos mediante metodologías ágiles.
+### Descripción del Proyecto
+Este sitio es el resultado del **TP Integrador de Prácticas Profesionalizantes II**. Se trata de un portfolio personal con una estética inspirada en el "Hombre Púrpura" (FNAF), diseñado bajo la filosofía **Mobile-First**. El objetivo principal fue demostrar el dominio de maquetación avanzada, pasando de un diseño base para celulares a un layout complejo de escritorio sin perder la coherencia visual.
 
-El diseño cuenta con una estética personalizada inspirada en **FNAF (Purple Guy)*, Homestuck * y  un toque **The Binding of Isaac**, integrando elementos multimedia y feedback visual interactivo.
+### Sitio en Vivo !!
+Podés ver el resultado final aquí: [TU_LINK_DE_GITHUB_PAGES_AQUÍ]
 
-## 🛠️ Tecnologías Utilizadas
-* **HTML5:** Estructura semántica y validaciones nativas de formulario.
-* **CSS3:** Diseño responsivo, pseudo-clases de validación (`:valid`, `:invalid`) y efectos de iluminación (Glow).
-* **Git:** Control de versiones con flujo de trabajo basado en ramas (*Feature Branching*).
-* **GitHub:** Alojamiento del código, gestión de tareas mediante **Kanban** y revisión por **Pull Requests**.
-* **y2mate.tube y Google:**para la optecion del multimedia
+### Tecnologías Aplicadas
+* **HTML5 Semántico:** Estructura optimizada para accesibilidad y SEO.
+* **CSS3 Avanzado:** Uso extensivo de **Variables Nativa** (:root) para una gestión de colores dinámica.
+* **Flexbox:** Implementado en la sección "Hero" y en las tarjetas de habilidades para lograr alineaciones flexibles.
+* **CSS Grid:** Arquitectura principal del sitio utilizando `grid-template-areas` para el layout y `auto-fit/minmax` para la galería de proyectos.
+* **Diseño Responsivo:** Implementación de 3 breakpoints estratégicos para una experiencia fluida en iPhone, iPad y Laptop.
 
-## 🎯 Características Principales
-- ✅ **Formulario Validado:** Más de 6 campos con validación en tiempo real.
-- ✅ **Accesibilidad:** Uso de atributos ARIA y etiquetas Meta para SEO.
-- ✅ **Multimedia:** Reproductor de audio integrado y optimización de imágenes.
-- ✅ **Metodologías Ágiles:** Organización de tareas documentada en el Tablero Kanban del repositorio.
+### 📸 Vista Previa (Screenshots)
 
-## 🚀 Cómo visualizar el proyecto
-Puedes ver la versión en vivo del sitio a través de **GitHub Pages** en el siguiente enlace:
-
->https://feroxtechcode.github.io/Ariel-Santillan-mi-sitio-web-plus-Ultra/
-
----
-*Este proyecto fue realizado como parte de la formación en Análisis de Sistemas.*
+| Mobile (iPhone) | Tablet (iPad) | Desktop (Laptop) |
+| :---: | :---: | :---: |
+| ![Mobile](./images/mobile.png) | ![Tablet](./images/tablet.png) | ![Desktop](./images/desktop.png) |
