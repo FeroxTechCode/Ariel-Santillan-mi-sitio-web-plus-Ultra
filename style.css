@@ -1,8 +1,12 @@
 :root {
-  --primary: #492d7d;
-  --accent: #f03030;
-  --bg: #f4f4f9;
-  --text: #333;
+  --color-primary: #2E75B6;
+  --color-secondary: #1B2A4A;
+  --color-accent: #F59E0B;
+  --color-text: #334155;
+  --color-bg: #F8FAFC;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.1);
+  --font-main: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -12,15 +16,71 @@
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+  font-family: var(--font-main);
+  font-size: 1rem;      
+  line-height: 1.6;     
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
+/* ============================================================
+   2. ESTRUCTURA GRID (Lógica Mobile-First Corregida)
+   ============================================================ */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr; /* Una sola columna en el celu */
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  min-height: 100vh;
+}
+
+/* Asignamos las etiquetas a las áreas del mapa */
+.header  { grid-area: header; }
+.main    { grid-area: main;   }
+.footer  { grid-area: footer; }
+.sidebar { 
+  grid-area: sidebar; 
+  display: none; /* Se oculta en celulares */
+}
+
+/* --- BREAKPOINT TABLET (768px o más) --- */
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 220px 1fr; /* Sidebar + Contenido */
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+  }
+
+  .sidebar {
+    display: block; /* Aparece en tablets y PC */
+    background-color: #f1f5f9;
+    padding: 20px;
+    border-right: 1px solid #e2e8f0;
+  }
+}
+
+/* --- BREAKPOINT DESKTOP (1024px o más) --- */
+@media (min-width: 1024px) {
+  .layout {
+    max-width: 1200px;
+    margin: 0 auto; /* Centrado en pantalla */
+    box-shadow: 0 0 40px rgba(0,0,0,0.05);
+  }
+}
+
+/* ============================================================
+   3. TUS ESTILOS VISUALES (Fusionados)
+   ============================================================ */
+
+/* Encabezado */
 .main-header {
-  background-color: #492d7dcf;
-  border-bottom: 2px solid var(--accent);
+  background-color: var(--color-primary);
+  border-bottom: 2px solid var(--color-accent); /* Corregido el nombre de variable */
   padding: 20px;
   text-align: center;
   color: white;
@@ -33,20 +93,19 @@ body {
 }
 
 .bienvenido {
-  color: #800080;
+  color: white; /* Cambiado a blanco para que se lea sobre el azul */
   font-size: 1.5rem;
   font-weight: bold;
+  margin: 10px 0;
 }
 
-.letra-roja {
-  color: red;
-}
-
+/* Navegación y Botones Estilo Ariel */
 .navigation {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 16px;
+  flex-wrap: wrap;
 }
 
 .link {
@@ -54,8 +113,8 @@ body {
   text-decoration: none;
   font-weight: bold;
   padding: 11px 22px;
-  background-color: #6b309e;
-  border: 2px solid #3d1b5a;
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
   border-radius: 4px;
   transition: all 0.3s ease;
   display: inline-block;
@@ -64,101 +123,113 @@ body {
 }
 
 .link:hover {
-  background-color: #a366ff;
-  color: #000;
-  border-color: #fff;
+  background-color: white;
+  color: var(--color-secondary);
+  border-color: white;
   transform: scale(1.1);
-  box-shadow: 0 0 15px #a366ff;
+  box-shadow: 0 0 15px var(--color-secondary);
   cursor: pointer;
 }
 
-.content-wrapper {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-}
-
-.info-section,
-.form-container {
+/* Secciones de Información */
+.info-section {
   background: white;
-  padding: 20px;
+  padding: 25px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-.field {
-  margin-bottom: 15px;
-  text-align: left;
-}
-label {
-  display: block;
-  font-weight: bold;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-input:valid,
-textarea:valid {
-  border: 2px solid green;
-}
-input:invalid:not(:placeholder-shown) {
-  border: 2px solid red;
-}
-
-.btn-submit {
-  background-color: var(--primary);
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: var(--radius);
 }
 
-.main-footer {
-  background-color: #492d7dcf;
-  color: white;
-  padding: 20px;
+.hero h1 { font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+
+/* Tarjetas Flexbox (Habilidades) */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.card {
+  flex: 1 1 280px;
+  background-color: white;
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Galería Grid (Proyectos) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #edf2f7;
+  transition: all 0.3s ease;
   text-align: center;
 }
 
-#copyright {
-    background-color: chartreuse;
-    color: black;
-    display: inline-block;
-    padding: 5px;
+.gallery-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
 }
-/* Quisas no sea de Fnaf pero aguante issac */
+
+/* Reproductor de Música Estilo Fijo */
 .music-player {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.85); 
-    padding: 12px;
-    border: 2px solid #6a2e9e; 
-    border-radius: 10px;
-    z-index: 1000;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(107, 48, 158, 0.5); 
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.85); 
+  padding: 12px;
+  border: 2px solid #334155; 
+  border-radius: 10px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(107, 48, 158, 0.5); 
 }
-.music-player p {
-    margin: 0 0 8px 0;
-    font-family: 'Courier New', Courier, monospace; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
+
+/* Footer Profesional */
+.main-footer {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 2rem;
 }
-audio::-webkit-media-controls-panel {
-    background-color: #6b309e;
-}
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display {
-    color: #ffffff;
+
+#copyright {
+  background-color: #334155;
+  color: var(--color-accent);
+  display: inline-block;
+  padding: 8px 15px;
+  margin-top: 15px;
+  border-radius: 4px;
 }
