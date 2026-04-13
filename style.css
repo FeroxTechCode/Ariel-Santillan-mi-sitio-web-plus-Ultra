@@ -101,7 +101,7 @@ body {
   margin-top: 16px;
   flex-wrap: wrap;
 }
-
+/* Estilos de navegación unificados */
 .link {
   color: white;
   text-decoration: none;
