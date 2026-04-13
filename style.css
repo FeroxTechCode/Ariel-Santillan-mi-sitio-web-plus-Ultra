@@ -117,6 +117,7 @@ body {
 }
 
 .link:hover {
+  /* Efecto de elevación */
   background-color: white;
   color: var(--color-secondary);
   border-color: white;

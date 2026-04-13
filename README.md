@@ -4,7 +4,7 @@
 Este sitio es el resultado del **TP Integrador de Prácticas Profesionalizantes II**. Se trata de un portfolio personal con una estética inspirada en el "Hombre Púrpura" (FNAF), diseñado bajo la filosofía **Mobile-First**. El objetivo principal fue demostrar el dominio de maquetación avanzada, pasando de un diseño base para celulares a un layout complejo de escritorio sin perder la coherencia visual.
 
 ### Sitio en Vivo !!
-Podés ver el resultado final aquí: [TU_LINK_DE_GITHUB_PAGES_AQUÍ]
+Podés ver el resultado final aquí: [https://github.com/FeroxTechCode/Ariel-Santillan-mi-sitio-web-plus-Ultra]
 
 ### Tecnologías Aplicadas
 * **HTML5 Semántico:** Estructura optimizada para accesibilidad y SEO.
@@ -15,6 +15,7 @@ Podés ver el resultado final aquí: [TU_LINK_DE_GITHUB_PAGES_AQUÍ]
 
 ### 📸 Vista Previa (Screenshots)
 
-| Mobile (iPhone) | Tablet (iPad) | Desktop (Laptop) |
-| :---: | :---: | :---: |
-| ![Mobile](./images/mobile.png) | ![Tablet](./images/tablet.png) | ![Desktop](./images/desktop.png) |
+<img src="images/Celular.png"> /* Imagen para Celulares */
+<img src="images/Laptop.png" > /* Imagen para Laptop */
+<img src="images/Tablet.png" > /* Imagen para Tablet */
+
