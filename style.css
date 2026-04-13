@@ -1,11 +1,11 @@
 :root {
-  --color-primary: #2E75B6;
-  --color-secondary: #1B2A4A;
-  --color-accent: #F59E0B;
+  --color-primary: #2e75b6;
+  --color-secondary: #1b2a4a;
+  --color-accent: #f59e0b;
   --color-text: #334155;
-  --color-bg: #F8FAFC;
+  --color-bg: #f8fafc;
   --radius: 8px;
-  --shadow: 0 2px 8px rgba(0,0,0,0.1);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   --font-main: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
@@ -17,18 +17,15 @@
 
 body {
   font-family: var(--font-main);
-  font-size: 1rem;      
-  line-height: 1.6;     
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
 }
 
-/* ============================================================
-   2. ESTRUCTURA GRID (Lógica Mobile-First Corregida)
-   ============================================================ */
 .layout {
   display: grid;
-  grid-template-columns: 1fr; /* Una sola columna en el celu */
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header"
@@ -37,19 +34,23 @@ body {
   min-height: 100vh;
 }
 
-/* Asignamos las etiquetas a las áreas del mapa */
-.header  { grid-area: header; }
-.main    { grid-area: main;   }
-.footer  { grid-area: footer; }
-.sidebar { 
-  grid-area: sidebar; 
-  display: none; /* Se oculta en celulares */
+.header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+}
+.sidebar {
+  grid-area: sidebar;
+  display: none;
 }
 
-/* --- BREAKPOINT TABLET (768px o más) --- */
 @media (min-width: 768px) {
   .layout {
-    grid-template-columns: 220px 1fr; /* Sidebar + Contenido */
+    grid-template-columns: 220px 1fr;
     grid-template-areas:
       "header header"
       "sidebar main"
@@ -57,30 +58,23 @@ body {
   }
 
   .sidebar {
-    display: block; /* Aparece en tablets y PC */
+    display: block;
     background-color: #f1f5f9;
     padding: 20px;
     border-right: 1px solid #e2e8f0;
   }
 }
 
-/* --- BREAKPOINT DESKTOP (1024px o más) --- */
 @media (min-width: 1024px) {
   .layout {
     max-width: 1200px;
-    margin: 0 auto; /* Centrado en pantalla */
-    box-shadow: 0 0 40px rgba(0,0,0,0.05);
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
   }
 }
-
-/* ============================================================
-   3. TUS ESTILOS VISUALES (Fusionados)
-   ============================================================ */
-
-/* Encabezado */
 .main-header {
   background-color: var(--color-primary);
-  border-bottom: 2px solid var(--color-accent); /* Corregido el nombre de variable */
+  border-bottom: 2px solid var(--color-accent);
   padding: 20px;
   text-align: center;
   color: white;
@@ -93,13 +87,12 @@ body {
 }
 
 .bienvenido {
-  color: white; /* Cambiado a blanco para que se lea sobre el azul */
+  color: white;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 10px 0;
 }
 
-/* Navegación y Botones Estilo Ariel */
 .navigation {
   display: flex;
   justify-content: center;
@@ -131,7 +124,6 @@ body {
   cursor: pointer;
 }
 
-/* Secciones de Información */
 .info-section {
   background: white;
   padding: 25px;
@@ -140,13 +132,16 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Hero Section */
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 60vh;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   color: white;
   text-align: center;
   padding: 2rem;
@@ -154,9 +149,11 @@ body {
   border-radius: var(--radius);
 }
 
-.hero h1 { font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
-/* Tarjetas Flexbox (Habilidades) */
 .services-container {
   display: flex;
   flex-wrap: wrap;
@@ -170,7 +167,9 @@ body {
   padding: 25px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border: 1px solid #e2e8f0;
 }
 
@@ -179,7 +178,6 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Galería Grid (Proyectos) */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -202,21 +200,19 @@ body {
   border-color: var(--color-accent);
 }
 
-/* Reproductor de Música Estilo Fijo */
 .music-player {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.85); 
+  background: rgba(0, 0, 0, 0.85);
   padding: 12px;
-  border: 2px solid #334155; 
+  border: 2px solid #334155;
   border-radius: 10px;
   z-index: 1000;
   text-align: center;
-  box-shadow: 0 0 15px rgba(107, 48, 158, 0.5); 
+  box-shadow: 0 0 15px rgba(107, 48, 158, 0.5);
 }
 
-/* Footer Profesional */
 .main-footer {
   background-color: var(--color-secondary);
   color: white;
