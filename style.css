@@ -49,6 +49,7 @@ body {
 }
 
 @media (min-width: 768px) {
+  /* Ajuste fino para resoluciones intermedias */
   .layout {
     grid-template-columns: 220px 1fr;
     grid-template-areas:
